@@ -1,0 +1,1 @@
+import type { Metadata } from "next"; import { ComingSoon } from "@/components/ComingSoon"; import { futureMetadata } from "@/content/seo"; export const metadata: Metadata = futureMetadata("Guild"); export default function Guild(){return <ComingSoon name="Guild" description="The community of people who practice the SignalSmith way of thinking." />}

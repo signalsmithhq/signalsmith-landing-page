@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #090c10;
+  --paper: #f4f5f2;
+  --muted: #6e777c;
+  --line: rgba(9, 12, 16, 0.14);
+  --cyan: #18b9dc;
+  --orange: #f6a623;
+  --pink: #eb4d9b;
+  --grid-line-opacity: .09;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--cyan); color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+
+.eyebrow {
+  font-family: var(--font-geist-mono), "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  color: #667076;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.mono { font-family: var(--font-geist-mono), "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+.cta { font-family: var(--font-geist-mono), "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.display { display: block; max-width: 100%; font-size: clamp(3.25rem, 8vw, 8rem); font-weight: 600; letter-spacing: -.03em; line-height: .98; overflow: visible; overflow-wrap: normal; text-wrap: balance; }
+.display-punctuation { display: inline-block; margin-left: .02em; }
+.section-title { display: block; font-size: clamp(2.3rem, 5vw, 5rem); font-weight: 600; letter-spacing: -.03em; line-height: 1; overflow: visible; }
+.rule { border-top: 1px solid var(--line); }
+.signal-line { background: linear-gradient(90deg, var(--cyan), var(--pink) 56%, var(--orange)); }
+.grid-paper {
+  background-image: linear-gradient(rgba(9,12,16,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(9,12,16,.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.signal-stage { transition: background-color .3s ease, border-left-color .3s ease, color .3s ease; }
+.signal-stage-number { color: rgba(9, 12, 16, .38); transition: color .3s ease; }
+.signal-stage-annotation { position: absolute; left: 1.5rem; top: 3rem; max-width: calc(100% - 3rem); opacity: 0; transform: translateY(3px); transition: opacity .3s ease, transform .3s ease, color .3s ease; }
+.signal-stage[data-stage="craft"] .signal-stage-number { color: color-mix(in srgb, var(--pink) 42%, transparent); }
+.signal-stage[data-stage="signal"] .signal-stage-number { color: color-mix(in srgb, var(--cyan) 48%, transparent); }
+.signal-stage[data-stage="decision"] .signal-stage-number { color: color-mix(in srgb, var(--orange) 48%, transparent); }
+.signal-stage[data-stage="craft"] .signal-stage-annotation { color: var(--pink); }
+.signal-stage[data-stage="signal"] .signal-stage-annotation { color: var(--cyan); }
+.signal-stage[data-stage="decision"] .signal-stage-annotation { color: var(--orange); }
+.signal-stage:focus-visible { background-color: rgba(9, 12, 16, .025); outline: 2px solid var(--cyan); outline-offset: -2px; }
+.signal-stage:focus-visible .signal-stage-annotation { opacity: .72; transform: translateY(0); }
+.signal-stage:focus-visible .signal-stage-number { color: var(--ink); }
+.signal-stage[data-stage="craft"]:focus-visible { border-left-color: var(--pink); background-color: color-mix(in srgb, var(--pink) 4%, transparent); }
+.signal-stage[data-stage="signal"]:focus-visible { border-left-color: var(--cyan); background-color: color-mix(in srgb, var(--cyan) 4%, transparent); }
+.signal-stage[data-stage="decision"]:focus-visible { border-left-color: var(--orange); background-color: color-mix(in srgb, var(--orange) 4%, transparent); }
+.signal-stage[data-stage="craft"]:focus-visible .signal-stage-number { color: var(--pink); }
+.signal-stage[data-stage="signal"]:focus-visible .signal-stage-number { color: var(--cyan); }
+.signal-stage[data-stage="decision"]:focus-visible .signal-stage-number { color: var(--orange); }
+@media (hover: hover) and (pointer: fine) {
+  .signal-stage:hover { background-color: rgba(9, 12, 16, .025); }
+  .signal-stage:hover .signal-stage-annotation { opacity: .72; transform: translateY(0); }
+  .signal-stage:hover .signal-stage-number { color: var(--ink); }
+  .signal-stage[data-stage="craft"]:hover { border-left-color: var(--pink); background-color: color-mix(in srgb, var(--pink) 4%, transparent); }
+  .signal-stage[data-stage="signal"]:hover { border-left-color: var(--cyan); background-color: color-mix(in srgb, var(--cyan) 4%, transparent); }
+  .signal-stage[data-stage="decision"]:hover { border-left-color: var(--orange); background-color: color-mix(in srgb, var(--orange) 4%, transparent); }
+  .signal-stage[data-stage="craft"]:hover .signal-stage-number { color: var(--pink); }
+  .signal-stage[data-stage="signal"]:hover .signal-stage-number { color: var(--cyan); }
+  .signal-stage[data-stage="decision"]:hover .signal-stage-number { color: var(--orange); }
+}
+.hero-grid {
+  background-image: linear-gradient(rgba(255,255,255,var(--grid-line-opacity)) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,var(--grid-line-opacity)) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.fade-up { animation: fadeUp .8s cubic-bezier(.22,1,.36,1) both; }
+.delay-1 { animation-delay: .12s; } .delay-2 { animation-delay: .24s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) { .display { font-size: clamp(3.25rem, 14vw, 4.5rem); letter-spacing: -.025em; line-height: .99; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

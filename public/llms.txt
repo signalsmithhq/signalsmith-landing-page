@@ -1,0 +1,37 @@
+# SignalSmith
+
+SignalSmith is a technical knowledge platform focused on solving real-world business problems through data, analysis, engineering, and systems thinking.
+
+## Core philosophy
+
+Start with the business problem, not the tool.
+
+## Conceptual model
+
+RAW MATERIAL → CRAFT → SIGNAL → DECISION
+
+- Raw Material: business context and data.
+- Craft: analysis, modeling, engineering, and careful interpretation.
+- Signal: an insight, metric, or pattern that reduces uncertainty.
+- Decision: the business action informed by the signal.
+
+## Ecosystem
+
+- Casebook: real-world business problems worked from first principles. Available at https://signalsmith.online/casebook
+- Gems: concise definitions and reusable knowledge about important business metrics and concepts. Being forged.
+- Blueprints: architecture, data models, and system designs behind data-driven solutions. Being forged.
+- Craft: hands-on methods, implementation, and technical exploration connected to business problems. Being forged.
+- Foundry: a public laboratory for real-world business problems. Coming soon.
+- Workshop: future learning experiences built around the SignalSmith method.
+- Advisory: future private application of the SignalSmith method.
+
+## Substantive pages
+
+- Homepage: https://signalsmith.online/
+- Casebook: https://signalsmith.online/casebook
+- Privacy: https://signalsmith.online/privacy
+
+## Official profiles
+
+- LinkedIn: https://www.linkedin.com/company/signalsmith-online
+- Instagram: https://www.instagram.com/signalsmith.online/

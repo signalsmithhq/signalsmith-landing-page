@@ -1,0 +1,1 @@
+import type { Metadata } from "next"; import { ComingSoon } from "@/components/ComingSoon"; import { futureMetadata } from "@/content/seo"; export const metadata: Metadata = futureMetadata("Experiments"); export default function Experiments(){return <ComingSoon name="Experiments" description="Exploratory work used to test ideas before they become established knowledge." />}
